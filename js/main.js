@@ -697,3 +697,19 @@ if (historyPanel && historyList) {
 loadHistory();
 renderHistory();
 show();
+/**增加阶乘功能 */
+function fact(n){
+  let s=1;
+  for（let i=2;i<=n;i++）{
+    s*=i;
+  }
+  return s;
+}
+function calc(expr){
+  if (expr.endsWith("××")){
+    let numStr=expr.slice(0,-2);
+    let  num =Number(numStr);
+    return fact(num);
+  }
+  return eval(expr.replaceAll("××","*"));
+  }
